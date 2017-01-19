@@ -1,12 +1,56 @@
 <!doctype html>
-<html>
+<html lang="en">
     <head>
-        <title> New Document </title>
-        <meta name="Author" content="">
-        <meta name="Keywords" content="">
-        <meta name="Description" content="">
+        <title> DEMO: endnote.js </title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">   <!-- For IE -->
+        <meta name="renderer" content="webkit">   <!-- For some Chinese web browser -->
+        <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- For mobile device -->
+        <meta name="Author" content="Tao Zhu">
+        <meta name="Keywords" content="Endnote, JavaScript, Literature, HTML">
+        <meta name="Description" content="Insert literature citation into HTML and then render as Endnote-style citation">
+        
+        <!-- CSS and JS, could be customized -->
+        <!-- jQuery (Required) -->
+        <script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+        
+        <!-- Bootstrap CSS (optional) -->
+        <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Bootstrap JS (optional) -->
+        <script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+        <!-- Last, cite the endnote.js file -->
+        <script src="endnote.js"></script>
     </head>
     <body>
-        <p>Hello World</p>
+        <div class="container" role="main">
+        
+            <div class="jumbotron">
+                <h1>Endnote.js</h1>
+            </div>
+            
+            <h2 class="page-header">Demo</h2>
+            <h3>Main text</h3>
+            <p style="line-height:200%; font-family: Times; font-size: 1.2em">
+                At the University of Manchester, a team under the leadership of Tom Kilburn designed and built 
+                a machine using the newly developed transistors instead of valves.<span class="endnote">Lavington, 
+                Simon (1998), A History of Manchester Computers (2 ed.), Swindon: The British Computer Society, 
+                pp. 34-35</span> Their first transistorised computer and the first in the world, was operational by 1953, 
+                and a second version was completed there in April 1955. However, the machine did make use of valves to generate its 125 kHz clock 
+                waveforms and in the circuitry to read and write on its magnetic drum memory, so it was not the 
+                first completely transistorized computer. That distinction goes to the Harwell CADET of 1955,
+                <span class="endnote">Cooke-Yarborough, E. H. (June 1998), "Some early transistor applications in the UK", 
+                Engineering and Science Education Journal, London, UK: IEE, 7 (3): 100-106</span> built by the electronics division of the 
+                Atomic Energy Research Establishment at Harwell.<span class="endnote"> Cooke-Yarborough, E. H. (June 1998), "Some early transistor 
+                applications in the UK", Engineering and Science Education Journal, London, UK: IEE, 7 (3): 100-106</span>
+                <span class="endnote">Cooke-Yarborough, E.H. (1957). Introduction to Transistor Circuits. Edinburgh: Oliver and Boyd. p. 139.</span>
+            </p>
+            <h3>References</h3>
+            <!-- Add an Order list named "endnote-reference-list" here -->
+            <ol id="endnote-reference-list"></ol>
+            
+            <!-- Optional: If you want to the beautiful bootstrap tooltip, add this -->
+            <script>$().ready(function(){$('[data-toggle="tooltip"]').tooltip();});</script>
+        </div>
     </body>
 </html>
